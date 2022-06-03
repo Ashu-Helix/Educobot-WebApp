@@ -27,7 +27,7 @@ import Confetti from "react-confetti";
 import { unstable_useForkRef } from "@mui/utils";
 // import { turn } from "../../components/helpers/dog";
 import { fontWeight } from "@mui/system";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 // ----------------------------------------------------------------------
 
@@ -63,8 +63,9 @@ export default function TestDialog({ getCoins, testDialogInfo, slug }: Props) {
   const [userQuestionPaper, setuserQuestionPaper] = useState([]);
   const [showError, setShowError] = useState(false);
   const router = useRouter();
-  const questionArray = require(`../../public/mcq/${slug}Mcq.js`).mcqArr
-  console.log(questionArray)
+  let questionArray = require(`../../public/mcq/${slug}Mcq.js`).mcqArr;
+
+  // console.log(questionArray)
   const previousQuestion = () => {
     if (questionIndex !== 0) {
       setQuestionIndex(questionIndex - 1);
@@ -105,6 +106,15 @@ export default function TestDialog({ getCoins, testDialogInfo, slug }: Props) {
   useEffect(() => {
     setActualWidthHeight();
     window.addEventListener("resize", setActualWidthHeight);
+
+    // try {
+    //   questionArray = require(`../../public/mcq/${slug}Mcq.js`).mcqArr
+    // } catch (err) {
+    //   // setTimeout(() => {
+    //   //   questionArray = require(`../../public/mcq/${slug}Mcq.js`).mcqArr
+    //   // }, 3000);
+    //   router.reload();
+    // }
 
     return () => {
       window.removeEventListener("resize", setActualWidthHeight);
@@ -487,7 +497,7 @@ export default function TestDialog({ getCoins, testDialogInfo, slug }: Props) {
                 textTransform: "none",
               }}
               onClick={() => {
-                router.push("http://localhost:3001/dashboard/app/");
+                router.push(`${process.env.Dashboard_URl}`);
               }}
               autoFocus
             >

@@ -16,14 +16,14 @@ let pred_guide = [];
 
 function image_scaler(lesson_id, file) {
     // let path = `../` + language.image_folder + `/`;
-    let path = `http://localhost:7001/scripts/${lesson_id}/images/`;
+    let path = `https://app.educobot.com/liveLessons/python/${lesson_id}/images/`;
     return `<img src = "` + path + file + `" class="responsive-img">`
 }
 
 function image_scaler_our_version(lesson_id, file, id) {
     // let path = `../` + language.image_folder + `/`;
-    // `<img src = "` + "http://localhost:7001/scripts/images/Python Tool Tip square.png" + `" class="responsive-img">`
-    // return `<img src = "` + 'http://localhost:7001/scripts/images/Python Tool Tip.png' + `" class="responsive-img">`
+    // `<img src = "` + "https://app.educobot.com/liveLessons/python/images/Python Tool Tip square.png" + `" class="responsive-img">`
+    // return `<img src = "` + 'https://app.educobot.com/liveLessons/python/images/Python Tool Tip.png' + `" class="responsive-img">`
     if (id === "tut1") {
         return `<div class=""><img src = "` + "http://localhost:3003/img/Python_Tool_Tip_square.png" + `" class="responsive-img" alt = "hint here"><div style="width: 100%;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);"><p style="font-size:1.5rem;color:#fff;font-weight:700;line-height: 0.7cm;">${file}</p></div></div>`;
     } else {
@@ -34,7 +34,7 @@ function image_scaler_our_version(lesson_id, file, id) {
 
 
 function play_audio_tutorial(lesson_id, file) {
-    let path = `http://localhost:7001/scripts/${lesson_id}/audio/`;
+    let path = `https://app.educobot.com/liveLessons/python/${lesson_id}/audio/`;
     // let path = `../` + language.audio_folder + `/`;
     if (!audio.paused) audio.pause();
     audio = new Audio(path + file);
@@ -114,6 +114,7 @@ function tutorial_guide_updater(lesson_id, user_code) {
         }
     });
 }
+
 
 
 export { tutorial_guide_updater, make_pred_guide, helpCode }

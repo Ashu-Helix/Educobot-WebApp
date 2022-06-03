@@ -142,7 +142,7 @@ export default function PhaserGame(props) {
   const [xml, setXml] = useState("");
   const tut: any[] = dataParse.map(data => (data[lang]))
   tut.shift();
-  let McqData = require(`../../../public/mcq/${slug}Mcq.js`);
+  // let McqData = require(`../../../public/mcq/${slug}Mcq.js`);
 
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
@@ -207,7 +207,9 @@ export default function PhaserGame(props) {
     if (typeof window !== "undefined" && window['updateImports'])
       setImt([...window['updateImports']])
     window['tutorials'] = tut
-    const interval = setInterval(() => {
+    let interval;
+    // setTimeout(() => {
+    interval = setInterval(() => {
       setTimer(t => t + 1);
       let completed = window[`completedFlag`];
       if (completed()) {
@@ -215,6 +217,7 @@ export default function PhaserGame(props) {
         clearInterval(interval);
       }
     }, 1000);
+    // }, 3006);
     return () => clearInterval(interval);
   }, [router.query]);
 

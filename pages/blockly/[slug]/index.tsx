@@ -42,18 +42,20 @@ export const getStaticProps: GetStaticProps = async (context) => {
     type: "binary",
   });
 
-  const staticSlug = {
-    "4bda4814-a2b1-4c4f-b102-eda5181bd0f8": 1,
-    "1d749e84-1155-4269-93ab-550ee7aabd4a": 0
-  }
+  const staticSlug = [
+    "1d749e84-1155-4269-93ab-550ee7aabd4a",
+    "4bda4814-a2b1-4c4f-b102-eda5181bd0f8"
+  ]
 
   let index = 0;
   const sheetNames = readedData.SheetNames;
   sheetNames.forEach((s, i) => {
+    console.log(context.params.slug == staticSlug[i]);
     context.params.slug === staticSlug[i] ? index = i : 0
   })
 
   const wsname = readedData.SheetNames[index];
+  console.log(index, context.params.slug, 57)
   const ws = readedData.Sheets[wsname];
 
   /* Convert array to json*/

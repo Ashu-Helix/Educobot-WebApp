@@ -78,4 +78,8 @@ function handleMessage(event) {
     };
 }
 
-export { handleMessage, externalLibs, runIt, outf, SuccessfulOutput }
+function completedFlag() {
+    return SuccessfulOutput;
+}
+
+export { handleMessage, externalLibs, runIt, outf, SuccessfulOutput, completedFlag }

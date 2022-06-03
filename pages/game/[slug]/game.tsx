@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 export default function game({ slug }) {
   useEffect(() => {
+    // setTimeout(() => {
     const fileExports = require(`../../../public/game/${slug}/main`);
     Object.keys(fileExports).forEach((key) => {
       window[`${key}`] = fileExports[key];
     })
+    // }, 3000);
   }, []);
 
   return <div id="sprite-container" /*className="animation_window" */ />
