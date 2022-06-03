@@ -497,7 +497,7 @@ export default function TestDialog({ getCoins, testDialogInfo, slug }: Props) {
                 textTransform: "none",
               }}
               onClick={() => {
-                router.push(`${process.env.Dashboard_URl}`);
+                router.push(`${process.env.SERVER_URL}`);
               }}
               autoFocus
             >

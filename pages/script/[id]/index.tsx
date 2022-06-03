@@ -5,6 +5,9 @@ import styles from "../../../styles/Problems.module.css";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import KeyBoardContainer from "../../../components/KeyBoardContainer";
+
+import ScriptDialog from "../../../MyComponents/DialogBoxes/ScriptMcqDialog";
+
 const PythonCode = dynamic(import("../../../components/pythonCode"), {
   ssr: false,
 });
@@ -128,8 +131,11 @@ export default function Scripts(props) {
       runIt(py, code)
       let interval = setTimeout(() => {
         console.log(script.completedFlag());
+        if (script.completedFlag()) {
+          document.getElementById("openTest").click();
+        }
         clearInterval(interval);
-      }, 3000);
+      }, 5000);
       // document.getElementById("runbtn").click();
     }
   };
@@ -240,6 +246,11 @@ export default function Scripts(props) {
             </button>
           </div>
           <div id="output" className={styles.output_for_script} />
+          <ScriptDialog
+            testDialogInfo={{
+              dialogStatus: "test",
+            }}
+          />
           <dialog id="modal" />
         </div>
         {keyboardState && (

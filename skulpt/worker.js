@@ -33,8 +33,8 @@ function builtinRead(file) {
 
 function outf(text) {
     const mypre = document.getElementById("output");
-    mypre.innerHTML = mypre.innerHTML + text;
-    // mypre.innerHTML = text;
+    // mypre.innerHTML = mypre.innerHTML + text;
+    mypre.innerHTML = text;
 }
 function runIt(pythonCode, finalCode) {
 
