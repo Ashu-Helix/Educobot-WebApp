@@ -25,9 +25,9 @@ function image_scaler_our_version(lesson_id, file, id) {
     // `<img src = "` + "http://localhost:7001/scripts/images/Python Tool Tip square.png" + `" class="responsive-img">`
     // return `<img src = "` + 'http://localhost:7001/scripts/images/Python Tool Tip.png' + `" class="responsive-img">`
     if (id === "tut1") {
-        return `<div class=""><img src = "` + "http://localhost:7001/scripts/images/Python Tool Tip square.png" + `" class="responsive-img" alt = "hint here"><div style="width: 100%;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);"><p style="font-size:1.5rem;color:#fff;font-weight:700;line-height: 0.7cm;">${file}</p></div></div>`;
+        return `<div class=""><img src = "` + "http://localhost:3003/img/Python_Tool_Tip_square.png" + `" class="responsive-img" alt = "hint here"><div style="width: 100%;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);"><p style="font-size:1.5rem;color:#fff;font-weight:700;line-height: 0.7cm;">${file}</p></div></div>`;
     } else {
-        return `<div class=""><img src = "` + "http://localhost:7001/scripts/images/Python Tool Tip.png" + `" class="responsive-img" alt = "hint here"><div style="width: 100%;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);"><p style="font-size:1.5rem;color:#fff;line-height: 0.7cm;">${file}</p></div></div>`
+        return `<div class=""><img src = "` + "http://localhost:3003/img/Python_Tool_Tip.png" + `" class="responsive-img" alt = "hint here"><div style="width: 100%;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);"><p style="font-size:1.5rem;color:#fff;line-height: 0.7cm;">${file}</p></div></div>`
     }
 
 }
